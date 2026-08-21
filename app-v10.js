@@ -1,6 +1,6 @@
 (()=>{
 'use strict';
-const APP_VERSION='v10';
+const APP_VERSION='v10.1';
 const KEY='fantasta26_state_v2';
 const ROLE_ORDER={P:0,D:1,C:2,A:3};
 const ROLE_NAMES={P:'Portieri',D:'Difensori',C:'Centrocampisti',A:'Attaccanti'};
@@ -97,5 +97,5 @@ $('#search').oninput=render;
 $('#minQ').onchange=()=>{st.minQ=Math.max(1,finiteOr($('#minQ').value,1));save();render()};
 $('#closeRole').onclick=()=>{const r=st.view;if(!ROLE_NAMES[r])return;if(confirm('Chiudere il reparto '+ROLE_NAMES[r]+'?')){if(!st.closed.includes(r))st.closed.push(r);st.view=['P','D','C','A'].find(x=>!st.closed.includes(x))||'MINE';save();render()}};
 render();
-if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js?v=10').catch(()=>{});
+if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js?v=10.1').catch(()=>{});
 })();
