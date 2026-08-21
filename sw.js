@@ -1,4 +1,4 @@
-const CACHE='fantasta-2026-27-v10';
+const CACHE='fantasta-2026-27-v10.1';
 const ASSETS=['./','./index.html','./manifest.webmanifest','./players-base.js','./players-extra.js','./app-v10.js'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
